@@ -1,3 +1,4 @@
+const marquee = document.getElementById("mq");
 const scoreOutput = document.getElementById("score");
 const countryOutput = document.getElementById("contry");
 const capitalInput = document.getElementById("capital");
@@ -36,7 +37,12 @@ function getRandomCapital() {
 		.then((value) => {
 			countryOutput.innerHTML = value[0];
 			answer = value[1];
+			marquee.innerHTML = `Рекорд: ${value[2]}`;
 		});
 }
+
+window.addEventListener("beforeunload", () => {
+	eel.save_score(score)();
+});
 
 getRandomCapital();
