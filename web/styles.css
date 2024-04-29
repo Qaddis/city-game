@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+	--light: #fafafa;
+	--main-font: "Noto Sans", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	width: 100%;
+	height: 100vh;
+	background: linear-gradient(45deg, #34e89e, #0f3443 90%);
+
+	font-size: 25px;
+	font-family: var(--main-font);
+	color: var(--light);
+
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+span {
+	position: absolute;
+	left: 25px;
+	bottom: 25px;
+	font-weight: 700;
+	font-size: 1em;
+}
+
+.form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.form h1 {
+	margin-bottom: 50px;
+}
+
+.form input {
+	width: 400px;
+	margin-bottom: 25px;
+	border: none;
+	outline: none;
+	background-color: transparent;
+	backdrop-filter: blur(180px);
+	padding: 10px 20px 5px;
+	border-bottom: 3px solid var(--light);
+	border-radius: 2px;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	font-size: 1em;
+	font-family: var(--main-font);
+	letter-spacing: 2px;
+	color: var(--light);
+	text-transform: uppercase;
+}
+
+.form label {
+	width: 400px;
+	font-size: 0.65em;
+}
+
+.form button {
+	padding: 10px 25px;
+	background-color: var(--light);
+	border-radius: 8px;
+	border: none;
+	font-size: 1em;
+	font-family: var(--main-font);
+	color: #259e78;
+	transition: all 0.15s;
+}
+
+.form button:hover {
+	filter: drop-shadow(0 0 5px var(--light));
+}
+
+.form button:active {
+	opacity: 0.9;
+	translate: 0 2px;
+}
+
+.form button:focus-visible {
+	outline: 2px dashed var(--light);
+	outline-offset: 3px;
+}
+
+.false {
+	background: linear-gradient(45deg, #eb5757, #000);
+}
+
+.false button {
+	color: #953737;
+}
