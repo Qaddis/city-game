@@ -2,6 +2,7 @@ const marquee = document.getElementById("mq");
 const scoreOutput = document.getElementById("score");
 const countryOutput = document.getElementById("contry");
 const capitalInput = document.getElementById("capital");
+const hintLabel = document.querySelector(".hint-lbl");
 
 let answer = "";
 let score = 0;
@@ -14,7 +15,7 @@ const changeTheme = () => {
 const checkAnswer = () => {
 	let userAnswer = capitalInput.value.trim();
 
-	if (userAnswer.length > 3) {
+	if (userAnswer.length >= 3) {
 		if (userAnswer.toLowerCase() === answer.toLowerCase()) {
 			capitalInput.value = "";
 			score++;
@@ -27,8 +28,16 @@ const checkAnswer = () => {
 			scoreOutput.innerHTML = `Счёт: ${score}`;
 
 			changeTheme();
+			getRandomCapital();
 		}
 	}
+};
+
+const showHint = () => {
+	document.querySelector(".hint-btn").classList.add("d-none");
+	hintLabel.innerHTML =
+		answer[0] + "*".repeat(answer.length - 2) + answer.slice(-1);
+	hintLabel.classList.remove("d-none");
 };
 
 function getRandomCapital() {
@@ -39,6 +48,10 @@ function getRandomCapital() {
 			answer = value[1];
 			marquee.innerHTML = `Рекорд: ${value[2]}`;
 		});
+
+	hintLabel.innerHTML = "";
+	hintLabel.classList.add("d-none");
+	document.querySelector(".hint-btn").classList.remove("d-none");
 }
 
 window.addEventListener("beforeunload", () => {

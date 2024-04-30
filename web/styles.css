@@ -109,3 +109,40 @@ span {
 .false button {
 	color: #953737;
 }
+
+.hint-btn {
+	background-color: transparent;
+	border: none;
+	outline: none;
+	position: absolute;
+	right: 20px;
+	bottom: 20px;
+	transition: all 0.15s;
+}
+
+.hint-btn svg {
+	width: 75px;
+	height: 75px;
+	display: inline;
+	fill: var(--light);
+	transition: all 0.15s;
+}
+
+.hint-btn:hover svg {
+	scale: 1.2;
+}
+
+.hint-btn:active {
+	opacity: 0.95;
+	translate: 0 3px;
+}
+
+.hint-lbl {
+	right: 25px !important;
+	bottom: 25px !important;
+	text-align: right;
+}
+
+.d-none {
+	display: none !important;
+}
