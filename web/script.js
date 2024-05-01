@@ -58,4 +58,8 @@ window.addEventListener("beforeunload", () => {
 	eel.save_score(score)();
 });
 
+window.addEventListener("keypress", ({ key }) => {
+	if (key == "Enter") checkAnswer();
+});
+
 getRandomCapital();
