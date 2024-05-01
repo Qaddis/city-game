@@ -12,6 +12,12 @@ def get_random_capital():
 
     with open('score.txt', 'r') as file:
         score = file.read()
+        incorr_chars = [char for char in score if not char.isdigit()]
+
+    if incorr_chars or score == "":
+        score = "0"
+        with open('score.txt', 'w') as file:
+            file.write(score)
 
     return [random_country, random_capital, score]
 
